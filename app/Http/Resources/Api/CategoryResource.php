@@ -19,7 +19,7 @@ class CategoryResource extends JsonResource
             'name' => $this->name,
             'icon' => $this->icon,
             'slug' => $this->slug,
-            'recipe_count' => $this->recipes->count,
+            'recipe_count' => $this->recipes_count,
             // 'recipes' => RecipeResource::collection($this->whenLoaded('recipes')),
         ];
     }
