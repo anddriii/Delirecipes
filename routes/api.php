@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\api\IngredientController;
 use App\Http\Controllers\Api\RecipeAuthorController;
+use App\Http\Controllers\Api\RecipeController;
 use App\Models\Ingredient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,6 @@ Route::apiResource('/ingredients', IngredientController::class);
 
 Route::get('/author/{recipeAuthor:id}', [RecipeAuthorController::class, 'show']);
 Route::apiResource('/authors', RecipeAuthorController::class);
+
+Route::get('/recipe/{recipe:slug}', [RecipeController::class, 'show']);
+Route::apiResource('/recipes', RecipeController::class);

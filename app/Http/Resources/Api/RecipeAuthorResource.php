@@ -17,7 +17,8 @@ class RecipeAuthorResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'photo' => $this->photo
+            'photo' => $this->photo,
+            'recipes' => RecipeResource::collection($this->whenLoaded('recipes'))
         ];
     }
 }

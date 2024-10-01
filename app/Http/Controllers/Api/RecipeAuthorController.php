@@ -15,6 +15,7 @@ class RecipeAuthorController extends Controller
     }
 
     public function show(RecipeAuthor $recipeAuthor){
+        $recipeAuthor->load('recipes');
         return new RecipeAuthorResource($recipeAuthor);
     }
 }

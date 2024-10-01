@@ -2,10 +2,11 @@
 
 namespace App\Http\Resources\Api;
 
+use App\Http\Resources\api\IngredientResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CategoryResource extends JsonResource
+class RecipeIngredientResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,11 +17,7 @@ class CategoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'icon' => $this->icon,
-            'slug' => $this->slug,
-            'recipe_count' => $this->recipes_count,
-            'recipes' => RecipeResource::collection($this->whenLoaded('recipes')),
+            'ingredient' => new IngredientResource($this->whenLoaded('ingredient')),
         ];
     }
 }
