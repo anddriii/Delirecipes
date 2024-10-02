@@ -10,7 +10,6 @@ use App\Http\Resources\api\IngredientResource;
 class IngredientController extends Controller
 {
     public function index(){
-        // $ingredients = Ingredient::withCount('recipeIngredients')->get();
         return IngredientResource::collection(Ingredient::all());
     }
     public function show(Ingredient $ingredient){
